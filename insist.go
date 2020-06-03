@@ -68,3 +68,11 @@ func OnFilePtr(val *os.File, err error) *os.File {
 	IsNil(err)
 	return val
 }
+
+func OnEnv(key string) string {
+	v := os.Getenv(key)
+	if len(v) == 0 {
+		log.Panicln(key)
+	}
+	return v
+}
