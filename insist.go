@@ -72,7 +72,7 @@ func OnFilePtr(val *os.File, err error) *os.File {
 func OnEnv(key string) string {
 	v := os.Getenv(key)
 	if len(v) == 0 {
-		log.Panicln(key)
+		log.Panicln("missing environment variable", key)
 	}
 	return v
 }
